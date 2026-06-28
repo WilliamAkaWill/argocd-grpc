@@ -173,3 +173,20 @@ impl std::fmt::Display for SyncStatus {
         }
     }
 }
+
+#[derive(Debug, Clone)]
+pub struct SyncOptions {
+    pub dry_run: bool,
+    pub prune: bool,
+    pub revision: Option<String>,
+}
+
+impl Default for SyncOptions {
+    fn default() -> Self {
+        Self {
+            dry_run: false,
+            prune: false,
+            revision: None,
+        }
+    }
+}
